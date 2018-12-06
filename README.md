@@ -11,6 +11,7 @@ py2so needs the environment of python2
 ## How to use py2so
 Usage: python py2so.py [options] ...
 
+```
 Options:
   -v,  --version    Show the version of the py2so
   -h,  --help       Show the help info
@@ -21,8 +22,12 @@ Options:
   -m,  --maintain   List the file or the directory you don't want to transfer
                     Note: The directories should be surrounded by '[]', and must be the relative path to -d's value 
                     Example: -m __init__.py,setup.py,[poc,resource,venv,interface]
+```
+
+```
 Example:
   python py2so.py -f test_file.py
   python py2so.py -d ../test_dir -m __init__.py -c
   python py2so.py -d /home/test/test_dir -m [poc/,resource/,venv/,interface/]
   python py2so.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
+```
