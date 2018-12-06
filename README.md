@@ -36,7 +36,7 @@ Example:
 ```
 
 The whole project before:
-!(demo1)[https://github.com/cckuailong/py2so/blob/master/img/1.png]
+![demo1](https://github.com/cckuailong/py2so/blob/master/img/1.png)
 
 After py2so:
-!(demo2)[https://github.com/cckuailong/py2so/blob/master/img/2.png]
+![demo2](https://github.com/cckuailong/py2so/blob/master/img/2.png)
