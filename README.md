@@ -7,7 +7,13 @@
 4. py2so can detect the .py file and transfer to .so file, also you can determin which file or directory you don't want to change
 5. You can also determin whether keep the source py.
 6. Considering the probality of the user's fault to delete the source .py file, py2so provide a copy of the source to avoid it, the name of it tends to be end with "_old"
-6. py2so needs the environment of python2
+7. py2so needs the environment of python2
+
+## How to config it
+```
+sudo bash config.sh
+```
+It will ask some space to install some necessary libraries
 
 ## How to use py2so
 ```
