@@ -1,6 +1,6 @@
 # py2so
-(English)[https://github.com/cckuailong/py2so/blob/master/README.md]
-(中文)[https://github.com/cckuailong/py2so/blob/master/README_zh.md]
+[English](https://github.com/cckuailong/py2so/blob/master/README.md)
+[中文](https://github.com/cckuailong/py2so/blob/master/README_zh.md)
 
 ## What is py2so
 1. py2so is tool to change the .py to .so, you can use it to hide the source code of py
@@ -9,7 +9,7 @@
 4. py2so can detect the .py file and transfer to .so file, also you can determin which file or directory you don't want to change
 5. You can also determin whether keep the source py.
 6. Considering the probality of the user's fault to delete the source .py file, py2so provide a copy of the source to avoid it, the name of it tends to be end with "_old"
-7. py2so needs the environment of python2
+7. py2so work well with python2 and python3, py2 --> py2so.py    py3 --> py2so_py3.py
 
 ## How to config it
 ```
@@ -20,7 +20,8 @@ It will ask some space to install some necessary libraries
 ## How to use py2so
 #### Python2
 ```
-Usage: python py2so.py [options] ...
+Usage: 
+  python py2so.py [options] ...
 ```
 
 ```
@@ -47,7 +48,8 @@ Example:
 ```
 #### Python3
 ```
-Usage: python py2so_py3.py [options] ...
+Usage: 
+  python py2so_py3.py [options] ...
 ```
 
 ```
