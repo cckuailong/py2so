@@ -3,8 +3,8 @@ import os, sys
 
 
 def transfer(dir_pref):
-    os.system('cython -2 %s.py;'
-              'gcc -c -fPIC -I/usr/include/python2.%s/ %s.c -o %s.o'
+    os.system('cython3 -2 %s.py;'
+              'gcc -c -fPIC -I/usr/include/python3.%s/ %s.c -o %s.o'
               % (p_subv, dir_pref, dir_pref, dir_pref))
     os.system('gcc -shared %s.o -o %s.so' % (dir_pref, dir_pref))
     if clear:
@@ -14,27 +14,27 @@ def transfer(dir_pref):
 
 if __name__ == '__main__':
     help_show = '''
-py2so is tool to change the .py to .so, you can use it to hide the source code of py
+py2so_py3 is tool to change the .py to .so, you can use it to hide the source code of py
 It can be called by the main func as "from module import * "
-py2so needs the environment of python2
+py2so_py3 needs the environment of python3
 
-Usage: python py2so.py [options] ...
+Usage: python py2so_py3.py [options] ...
 
 Options:
-  -v,  --version    Show the version of the py2so
+  -v,  --version    Show the version of the py2so_py3
   -h,  --help       Show the help info
   -p,  --py         Python subversion, default value == 7
-                    Example: -p 7  (means you use python2.7)
+                    Example: -p 7  (means you use python3.7)
   -d,  --directory  Directory of your project (if use -d, you change the whole directory)
   -f,  --file       File to be transfered (if use -f, you only change one file)
   -c,  --clear      Clear the origin .py
-                    (Warning: the option will delete the .py, but don't be so serious, py2so will give the project a copy)
+                    (Warning: the option will delete the .py, but don't be so serious, py2so_py3 will give the project a copy)
   -m,  --maintain   List the file or the directory you don't want to transfer
                     Note: The directories should be surrounded by '[]', and must be the relative path to -d's value 
                     Example: -m __init__.py,setup.py,[poc,resource,venv,interface]
 Example:
-  python py2so.py -f test_file.py
-  python py2so.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
+  python py2so_py3.py -f test_file.py
+  python py2so_py3.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
     '''
     clear = 0
     p_subv = '7'
@@ -52,7 +52,7 @@ Example:
         if key in ['-h', '--help']:
             print help_show
         elif key in ['-v', '--version']:
-            print 'py2so version 0.0.1'
+            print 'py2so_py3 version 0.0.1'
         elif key in ['-p', '--py']:
             p_subv = value
         elif key in ['-c', '--clear']:

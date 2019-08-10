@@ -16,6 +16,7 @@ sudo bash config.sh
 It will ask some space to install some necessary libraries
 
 ## How to use py2so
+#### Python2
 ```
 Usage: python py2so.py [options] ...
 ```
@@ -24,6 +25,8 @@ Usage: python py2so.py [options] ...
 Options:
   -v,  --version    Show the version of the py2so
   -h,  --help       Show the help info
+  -p,  --py         Python subversion, default value == 7
+                    Example: -p 7  (means you use python2.7)
   -d,  --directory  Directory of your project (if use -d, you change the whole directory)
   -f,  --file       File to be transfered (if use -f, you only change one file)
   -c,  --clear      Clear the origin .py
@@ -40,6 +43,35 @@ Example:
   python py2so.py -d /home/test/test_dir -m [poc/,resource/,venv/,interface/]
   python py2so.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
 ```
+#### Python3
+```
+Usage: python py2so_py3.py [options] ...
+```
+
+```
+Options:
+  -v,  --version    Show the version of the py2so_py3
+  -h,  --help       Show the help info
+  -p,  --py         Python subversion, default value == 7
+                    Example: -p 7  (means you use python3.7)
+  -d,  --directory  Directory of your project (if use -d, you change the whole directory)
+  -f,  --file       File to be transfered (if use -f, you only change one file)
+  -c,  --clear      Clear the origin .py
+                    (Warning: the option will delete the .py, but don't be so serious, py2so_py3 will give the project a copy)
+  -m,  --maintain   List the file or the directory you don't want to transfer
+                    Note: The directories should be surrounded by '[]', and must be the relative path to -d's value 
+                    Example: -m __init__.py,setup.py,[poc,resource,venv,interface]
+```
+
+```
+Example:
+  python py2so_py3.py -f test_file.py
+  python py2so_py3.py -d ../test_dir -m __init__.py -c
+  python py2so_py3.py -d /home/test/test_dir -m [poc/,resource/,venv/,interface/]
+  python py2so_py3.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
+```
+
+
 
 The whole project before:
 
