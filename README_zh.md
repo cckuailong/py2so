@@ -1,5 +1,5 @@
 # py2so
-[English](https://github.com/cckuailong/py2so/blob/master/README.md)
+[English](https://github.com/cckuailong/py2so/blob/master/README.md) || 
 [中文](https://github.com/cckuailong/py2so/blob/master/README_zh.md)
 
 ## py2so简介
@@ -73,7 +73,7 @@ sudo bash config.sh
   python py2so_py3.py -d ../test_dir -m __init__.py -c
   python py2so_py3.py -d /home/test/test_dir -m [poc/,resource/,venv/,interface/]
   python py2so_py3.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
-
+```
 
 
 整个Python项目加密前:

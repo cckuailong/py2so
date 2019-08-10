@@ -1,5 +1,5 @@
 # py2so
-[English](https://github.com/cckuailong/py2so/blob/master/README.md)
+[English](https://github.com/cckuailong/py2so/blob/master/README.md) || 
 [中文](https://github.com/cckuailong/py2so/blob/master/README_zh.md)
 
 ## What is py2so
