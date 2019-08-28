@@ -5,7 +5,7 @@ import os, sys
 def transfer(dir_pref):
     os.system('cython -2 %s.py;'
               'gcc -c -fPIC -I/usr/include/python2.%s/ %s.c -o %s.o'
-              % (p_subv, dir_pref, dir_pref, dir_pref))
+              % (dir_pref, p_subv, dir_pref, dir_pref))
     os.system('gcc -shared %s.o -o %s.so' % (dir_pref, dir_pref))
     if clear:
         os.system('rm -f %s.c %s.o %s.py' % (dir_pref, dir_pref, dir_pref))
@@ -44,15 +44,15 @@ Example:
     try:
         options,args = getopt.getopt(sys.argv[1:],"vhp:d:f:cm:",["version","help","py=","directory=","file=","clear","maintain="])
     except getopt.GetoptError:
-        print 'Get options Error'
-        print help_show
+        print('Get options Error')
+        print(help_show)
         sys.exit(1)
 
     for key, value in options:
         if key in ['-h', '--help']:
-            print help_show
+            print(help_show)
         elif key in ['-v', '--version']:
-            print 'py2so version 0.0.1'
+            print('py2so version 0.0.1')
         elif key in ['-p', '--py']:
             p_subv = value
         elif key in ['-c', '--clear']:
@@ -88,7 +88,7 @@ Example:
 
     if root_name != '':
         if not os.path.exists(root_name):
-            print 'No such Directory, please check or use the Absolute Path'
+            print('No such Directory, please check or use the Absolute Path')
             sys.exit(1)
         if os.path.exists('%s_old' % root_name):
             os.system('rm -rf %s_old' % root_name)
@@ -116,12 +116,14 @@ Example:
                         pass
                     elif file.endswith('.py'):
                         transfer(dir_pref)
-        except Exception,err:
-            print err
+        except Exception as err:
+            print(err)
+            if "Python.h" in str(err):
+                print("Please check out the Python version You use, and use option -p to specify the definite version")
     if file_name != '':
         try:
             dir_pref = file_name.split('.')[0]
             transfer(dir_pref)
-        except Exception, err:
-            print err
+        except Exception as err:
+            print(err)
 
