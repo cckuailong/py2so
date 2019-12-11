@@ -56,8 +56,8 @@ Usage:
 Options:
   -v,  --version    Show the version of the py2so_py3
   -h,  --help       Show the help info
-  -p,  --py         Python subversion, default value == 7
-                    Example: -p 7  (means you use python3.7)
+  -p,  --py         Python subversion, default value == 6
+                    Example: -p 6  (means you use python3.6)
   -d,  --directory  Directory of your project (if use -d, you change the whole directory)
   -f,  --file       File to be transfered (if use -f, you only change one file)
   -c,  --clear      Clear the origin .py

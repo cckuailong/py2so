@@ -1,11 +1,27 @@
 import getopt
 import os, sys
+import platform
 
 
 def transfer(dir_pref):
-    os.system('cython3 -2 %s.py;'
-              'gcc -c -fPIC -I/usr/include/python3.%s/ %s.c -o %s.o'
-              % (dir_pref, p_subv, dir_pref, dir_pref))
+    os_name = ''
+    os_info = platform.dist()
+    if os_info:
+        os_name = os_info[0]
+    else:
+        print("Cannot Fetch the OS")
+        sys.exit(1)
+    if not os_name:
+        print("Cannot Fetch the OS Name")
+        sys.exit(1)
+    if os_name.lower() == "ubuntu":
+        os.system('cython3 -2 %s.py;'
+                'gcc -c -fPIC -I/usr/include/python3.%s/ %s.c -o %s.o'
+                % (dir_pref, p_subv, dir_pref, dir_pref))
+    elif os_name.lower() == "centos":
+        os.system('cython -2 %s.py;'
+                'gcc -c -fPIC -I/usr/include/python3.%sm/ %s.c -o %s.o'
+                % (dir_pref, p_subv, dir_pref, dir_pref))
     os.system('gcc -shared %s.o -o %s.so' % (dir_pref, dir_pref))
     if clear:
         os.system('rm -f %s.c %s.o %s.py' % (dir_pref, dir_pref, dir_pref))
@@ -23,8 +39,8 @@ Usage: python py2so_py3.py [options] ...
 Options:
   -v,  --version    Show the version of the py2so_py3
   -h,  --help       Show the help info
-  -p,  --py         Python subversion, default value == 7
-                    Example: -p 7  (means you use python3.7)
+  -p,  --py         Python subversion, default value == 6
+                    Example: -p 6  (means you use python3.6)
   -d,  --directory  Directory of your project (if use -d, you change the whole directory)
   -f,  --file       File to be transfered (if use -f, you only change one file)
   -c,  --clear      Clear the origin .py
@@ -32,12 +48,13 @@ Options:
   -m,  --maintain   List the file or the directory you don't want to transfer
                     Note: The directories should be surrounded by '[]', and must be the relative path to -d's value 
                     Example: -m __init__.py,setup.py,[poc,resource,venv,interface]
+
 Example:
   python py2so_py3.py -f test_file.py
   python py2so_py3.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
     '''
     clear = 0
-    p_subv = '5'
+    p_subv = '6'
     root_name = ''
     file_name = ''
     m_list = ''

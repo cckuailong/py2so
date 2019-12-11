@@ -56,8 +56,8 @@ sudo bash config.sh
 选项:
   -v,  --version    显示py2so_py3版本
   -h,  --help       显示帮助菜单
-  -p,  --py         Python的子版本号, 默认值为 7
-                    例: -p 7  (比如你使用python3.7)
+  -p,  --py         Python的子版本号, 默认值为 6
+                    例: -p 6  (比如你使用python3.6)
   -d,  --directory  Python项目路径 (如果使用-d参数, 将加密整个Python项目)
   -f,  --file       Python文件 (如果使用-f, 将加密单个Python文件)
   -c,  --clear      删除原文件（项目）
