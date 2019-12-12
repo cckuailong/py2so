@@ -2,6 +2,10 @@
 [English](https://github.com/cckuailong/py2so/blob/master/README.md) || 
 [中文](https://github.com/cckuailong/py2so/blob/master/README_zh.md)
 
+## OS Support
+
+Ubuntu or CentOS
+
 ## What is py2so
 1. py2so is tool to change the .py to .so, you can use it to hide the source code of py
 2. py2so can transfer a single file, more of this, it can certainly transfer the whole project at one time!

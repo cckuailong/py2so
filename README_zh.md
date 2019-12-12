@@ -2,6 +2,10 @@
 [English](https://github.com/cckuailong/py2so/blob/master/README.md) || 
 [中文](https://github.com/cckuailong/py2so/blob/master/README_zh.md)
 
+## 系统支持
+
+Ubuntu 或 CentOS
+
 ## py2so简介
 1. py2so可以将python文件转化为so文件，达到加密python文件的目的
 2. py2so加密一个py文件，也可以直接加密一整个python项目

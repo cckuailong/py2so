@@ -22,6 +22,9 @@ def transfer(dir_pref):
         os.system('cython -2 %s.py;'
                 'gcc -c -fPIC -I/usr/include/python3.%sm/ %s.c -o %s.o'
                 % (dir_pref, p_subv, dir_pref, dir_pref))
+    else:
+        print("Not Ubuntu or CentOS")
+        sys.exit(1)
     os.system('gcc -shared %s.o -o %s.so' % (dir_pref, dir_pref))
     if clear:
         os.system('rm -f %s.c %s.o %s.py' % (dir_pref, dir_pref, dir_pref))
