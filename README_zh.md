@@ -1,3 +1,11 @@
+# 注意
+
+Py2so 不再更新维护
+
+请使用py2sec，跨平台（Linux, Mac, Win），而且速度更快
+
+[https://github.com/cckuailong/py2sec](https://github.com/cckuailong/py2sec)
+
 # py2so
 [English](https://github.com/cckuailong/py2so/blob/master/README.md) || 
 [中文](https://github.com/cckuailong/py2so/blob/master/README_zh.md)
