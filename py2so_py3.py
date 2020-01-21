@@ -4,7 +4,6 @@ import platform
 
 
 def transfer(dir_pref):
-    os_name = ''
     os_info = platform.dist()
     if os_info:
         os_name = os_info[0]
@@ -78,7 +77,10 @@ Example:
         elif key in ['-c', '--clear']:
             clear = 1
         elif key in ['-d', '--directory']:
-            root_name = value
+            if value[-1] == "/":
+                root_name = value[:-1]
+            else:
+                root_name = value
         elif key in ['-f', '--file']:
             file_name = value
         elif key in ['-m', '--maintain']:
@@ -88,7 +90,7 @@ Example:
             if m_list.find(',[') != -1:
                 tmp = m_list.split(',[')
                 file_list = tmp[0]
-                dir_list = tmp[1:-1]
+                dir_list = tmp[1][:-1]
                 file_flag = 1
                 dir_flag = 1
             elif m_list.find('[') != -1:
